@@ -121,6 +121,19 @@ export async function bookAppointment(formData) {
     if (!success) {
       throw new Error(error || "Failed to deduct credits");
     }
+/**
+ * Generate a Vonage Video API session
+ */
+async function createVideoSession() {
+  try {
+    const session = await vonage.video.createSession({ mediaMode: "routed" });
+    console.log(session)
+    return session.sessionId;
+   
+  } catch (error) {
+    throw new Error("Failed to create video session: " + error.message);
+  }
+}
 
     // Create the appointment with the video session ID
     const appointment = await db.appointment.create({
@@ -143,17 +156,6 @@ export async function bookAppointment(formData) {
   }
 }
 
-/**
- * Generate a Vonage Video API session
- */
-async function createVideoSession() {
-  try {
-    const session = await vonage.video.createSession({ mediaMode: "routed" });
-    return session.sessionId;
-  } catch (error) {
-    throw new Error("Failed to create video session: " + error.message);
-  }
-}
 
 /**
  * Generate a token for a video session
