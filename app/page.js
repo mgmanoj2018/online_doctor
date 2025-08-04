@@ -11,25 +11,22 @@ export default function Home() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-32">
+      <section className="relative overflow-hidden ">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge
-                variant="outline"
-                className="bg-emerald-900/30 border-emerald-700/30 px-4 py-2 text-emerald-400 text-sm font-medium"
-              >
-                Healthcare made simple
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Connect with doctors <br />
+            <div className="lg:space-y-1">
+              
+              <h1 className="text-4xl lg:space-y-20 lg:my-10 md:text-4xl lg:text-4xl font-bold text-white leading-tight">
+               24/7 access, wherever you are <br />
                 <span className="gradient-title">anytime, anywhere</span>
               </h1>
               <p className="text-muted-foreground text-lg md:text-xl max-w-md">
-                Book appointments, consult via video, and manage your healthcare
-                journey all in one secure platform.
+                One platform for all your needs — book, consult, and stay in control of your health.
+
+
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+            
+              <div className="flex flex-col sm:flex-row gap-4 my-8">
                 <Button
                   asChild
                   size="lg"
@@ -48,6 +45,12 @@ export default function Home() {
                   <Link href="/doctors">Find Doctors</Link>
                 </Button>
               </div>
+                <Badge 
+                variant="outline"
+                className="space-y-30 my-2 bg-emerald-900/30 border-emerald-700/30 px-4 py-2 text-emerald-400 text-sm font-medium"
+              >
+                Instant care from trusted doctors
+              </Badge>
             </div>
 
             <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
